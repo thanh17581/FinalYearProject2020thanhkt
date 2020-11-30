@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProDisplay-Bold.ttf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SFProDisplay-Regular.ttf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomAmountView" customModule="final_project" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="Xbf-YV-CIJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomAmountView" customModule="final_project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="176" height="74"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FN4-ty-Dz4">
+                    <rect key="frame" x="0.0" y="0.0" width="176" height="74"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRP-ow-U23">
+                            <rect key="frame" x="0.0" y="0.0" width="176" height="74"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJs-r5-vhF">
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="74"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCY-pO-voU">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="74"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="30"/>
+                                            <state key="normal" title="+"/>
+                                            <connections>
+                                                <action selector="OnBtnPlusAmountTapped:" destination="-1" eventType="touchUpInside" id="xHF-xy-kR2"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="TCY-pO-voU" secondAttribute="bottom" id="HSb-kc-ZYN"/>
+                                        <constraint firstItem="TCY-pO-voU" firstAttribute="leading" secondItem="mJs-r5-vhF" secondAttribute="leading" id="Iuu-Bv-dOg"/>
+                                        <constraint firstItem="TCY-pO-voU" firstAttribute="top" secondItem="mJs-r5-vhF" secondAttribute="top" id="QAh-0G-Ymz"/>
+                                        <constraint firstAttribute="trailing" secondItem="TCY-pO-voU" secondAttribute="trailing" id="xle-0O-tws"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRW-Dg-904">
+                                    <rect key="frame" x="44" y="0.0" width="1" height="74"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="Qk3-YY-5vb"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBG-3D-nMY">
+                                    <rect key="frame" x="45" y="0.0" width="86" height="74"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q81-Zb-AgY">
+                                            <rect key="frame" x="32" y="25.5" width="22.5" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Q81-Zb-AgY" firstAttribute="centerX" secondItem="CBG-3D-nMY" secondAttribute="centerX" id="359-DB-wMK"/>
+                                        <constraint firstItem="Q81-Zb-AgY" firstAttribute="centerY" secondItem="CBG-3D-nMY" secondAttribute="centerY" id="b0Y-xO-k9s"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGb-1y-b4U">
+                                    <rect key="frame" x="131" y="0.0" width="1" height="74"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhd-wm-Yqh">
+                                    <rect key="frame" x="132" y="0.0" width="44" height="74"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2z-OU-Dyy">
+                                            <rect key="frame" x="0.0" y="0.0" width="44" height="74"/>
+                                            <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="30"/>
+                                            <state key="normal" title="-"/>
+                                            <connections>
+                                                <action selector="OnBtnMinusAmountTapped:" destination="-1" eventType="touchUpInside" id="3Qj-z2-GJO"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="o2z-OU-Dyy" secondAttribute="trailing" id="3Rd-VN-IBB"/>
+                                        <constraint firstItem="o2z-OU-Dyy" firstAttribute="top" secondItem="Lhd-wm-Yqh" secondAttribute="top" id="Ecg-PJ-0VF"/>
+                                        <constraint firstAttribute="bottom" secondItem="o2z-OU-Dyy" secondAttribute="bottom" id="UKQ-rO-uRc"/>
+                                        <constraint firstItem="o2z-OU-Dyy" firstAttribute="leading" secondItem="Lhd-wm-Yqh" secondAttribute="leading" id="zbe-VZ-BuQ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Lhd-wm-Yqh" firstAttribute="width" secondItem="mJs-r5-vhF" secondAttribute="width" id="4Xe-ac-XnZ"/>
+                                <constraint firstItem="mJs-r5-vhF" firstAttribute="width" secondItem="nRP-ow-U23" secondAttribute="width" multiplier="1/4" id="feN-66-IOu"/>
+                                <constraint firstItem="CGb-1y-b4U" firstAttribute="width" secondItem="IRW-Dg-904" secondAttribute="width" id="rDD-PM-bhi"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="nRP-ow-U23" secondAttribute="trailing" id="Bgf-7E-Axs"/>
+                        <constraint firstItem="nRP-ow-U23" firstAttribute="top" secondItem="FN4-ty-Dz4" secondAttribute="top" id="DDz-Pb-VEZ"/>
+                        <constraint firstAttribute="bottom" secondItem="nRP-ow-U23" secondAttribute="bottom" id="oez-Do-XvY"/>
+                        <constraint firstItem="nRP-ow-U23" firstAttribute="leading" secondItem="FN4-ty-Dz4" secondAttribute="leading" id="tCk-Bw-F1s"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="FN4-ty-Dz4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3E5-y2-rLS"/>
+                <constraint firstItem="FN4-ty-Dz4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GQR-g2-fvV"/>
+                <constraint firstAttribute="bottom" secondItem="FN4-ty-Dz4" secondAttribute="bottom" id="TfH-fe-jSR"/>
+                <constraint firstAttribute="trailing" secondItem="FN4-ty-Dz4" secondAttribute="trailing" id="qbr-Q6-8of"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lblAmount" destination="Q81-Zb-AgY" id="n5r-vZ-JqY"/>
+            </connections>
+            <point key="canvasLocation" x="234.05797101449278" y="231.02678571428569"/>
+        </view>
+    </objects>
+</document>

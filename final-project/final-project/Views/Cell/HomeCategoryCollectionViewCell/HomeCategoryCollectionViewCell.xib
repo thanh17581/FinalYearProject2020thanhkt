@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FontsFree-Net-proxima_nova_reg-webfont.ttf">
+            <string>ProximaNova-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomeCategoryCollectionViewCell" customModule="final_project" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOi-Rz-AC3">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ho5-rz-32l">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breakfast" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-bK-abH">
+                                        <rect key="frame" x="26" y="16" width="28" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="28" id="Uqa-kC-Ceo"/>
+                                            <constraint firstAttribute="height" constant="28" id="lkl-Mh-lRn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8R-hq-Pxp">
+                                        <rect key="frame" x="16.5" y="52" width="47" height="14"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="12"/>
+                                        <color key="textColor" red="1" green="0.3411764705882353" blue="0.38823529411764707" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="c8R-hq-Pxp" firstAttribute="centerX" secondItem="QUH-bK-abH" secondAttribute="centerX" id="NEe-cQ-XRb"/>
+                                    <constraint firstItem="c8R-hq-Pxp" firstAttribute="top" secondItem="QUH-bK-abH" secondAttribute="bottom" constant="8" id="Qql-kA-mSG"/>
+                                    <constraint firstItem="QUH-bK-abH" firstAttribute="centerX" secondItem="ho5-rz-32l" secondAttribute="centerX" id="d7I-Lk-i3e"/>
+                                    <constraint firstItem="QUH-bK-abH" firstAttribute="top" secondItem="ho5-rz-32l" secondAttribute="top" constant="16" id="syl-ou-JMw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ho5-rz-32l" firstAttribute="top" secondItem="ZOi-Rz-AC3" secondAttribute="top" id="7dg-QN-DHs"/>
+                            <constraint firstAttribute="bottom" secondItem="ho5-rz-32l" secondAttribute="bottom" id="VLG-rb-3z4"/>
+                            <constraint firstItem="ho5-rz-32l" firstAttribute="leading" secondItem="ZOi-Rz-AC3" secondAttribute="leading" id="aTg-fV-znn"/>
+                            <constraint firstAttribute="trailing" secondItem="ho5-rz-32l" secondAttribute="trailing" id="yFM-9x-bgd"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ZOi-Rz-AC3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JgH-fy-oQy"/>
+                <constraint firstAttribute="trailing" secondItem="ZOi-Rz-AC3" secondAttribute="trailing" id="LHh-Ri-cZl"/>
+                <constraint firstItem="ZOi-Rz-AC3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SLm-Lh-npT"/>
+                <constraint firstAttribute="bottom" secondItem="ZOi-Rz-AC3" secondAttribute="bottom" id="tJ5-Vf-gh9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="categoryImage" destination="QUH-bK-abH" id="s1Y-Bd-q7U"/>
+                <outlet property="categoryName" destination="c8R-hq-Pxp" id="ees-Mg-Glg"/>
+                <outlet property="categoryView" destination="ho5-rz-32l" id="deM-Da-hkw"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="154"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="breakfast" width="25.5" height="25.5"/>
+    </resources>
+</document>

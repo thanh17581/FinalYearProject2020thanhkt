@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'final-project' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for final-project
+  pod 'IQKeyboardManagerSwift'
+  pod 'Toast-Swift', '~> 5.0.1'
+  pod 'Alamofire', '~> 5.2'
+  pod 'Kingfisher'
+  pod 'ObjectMapper' 
+  pod 'CRRefresh'
+  pod 'SkeletonView'
+  pod 'YNSearch'
+  pod 'RxSwift', '~> 5' 
+  pod 'RxCocoa', '~> 5'
+
+end

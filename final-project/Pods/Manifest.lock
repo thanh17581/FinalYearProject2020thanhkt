@@ -1,0 +1,60 @@
+PODS:
+  - Alamofire (5.4.0)
+  - CRRefresh (1.1.3)
+  - IQKeyboardManagerSwift (6.5.6)
+  - Kingfisher (5.15.7):
+    - Kingfisher/Core (= 5.15.7)
+  - Kingfisher/Core (5.15.7)
+  - ObjectMapper (4.2.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - SkeletonView (1.11.0)
+  - Toast-Swift (5.0.1)
+  - YNSearch (2.4.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - CRRefresh
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - ObjectMapper
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
+  - SkeletonView
+  - Toast-Swift (~> 5.0.1)
+  - YNSearch
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CRRefresh
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - ObjectMapper
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SkeletonView
+    - Toast-Swift
+    - YNSearch
+
+SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  CRRefresh: 1415d4ae06837fa7bb064c44f2e102f3ef517044
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SkeletonView: cc84ce90a804dd0dd7198dd802833411c8a64eaf
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  YNSearch: 56d4aad4547fd1efce355cccc220a94735b1ea14
+
+PODFILE CHECKSUM: 2cd6a4f7a62784b8d340bc14a576ba3c5586f7fe
+
+COCOAPODS: 1.10.0.rc.1
