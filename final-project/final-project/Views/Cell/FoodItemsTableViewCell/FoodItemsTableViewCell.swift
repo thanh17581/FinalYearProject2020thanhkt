@@ -11,7 +11,7 @@ import UIKit
 class FoodItemsTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var customAmountView: CustomAmountView!
+//    @IBOutlet weak var customAmountView: CustomAmountView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     
@@ -23,24 +23,24 @@ class FoodItemsTableViewCell: BaseTableViewCell {
     }
     
     func initUI() {
-        customAmountView.didPressOnButton = { item in
-            switch item {
-            case .plus:
-                print("pressed plus")
-                CartManager.shared.addItem(self.item!)
-            case .minus:
-                print("pressed minus")
-                CartManager.shared.removeItem(self.item!)
-            }
-            print(CartManager.shared.totalItems)
-        }
+//        customAmountView.didPressOnButton = { item in
+//            switch item {
+//            case .plus:
+//                print("pressed plus")
+//                CartManager.shared.addItem(self.item!)
+//            case .minus:
+//                print("pressed minus")
+//                CartManager.shared.removeItem(self.item!)
+//            }
+//            print(CartManager.shared.totalItems)
+//        }
     }
     
     override func configure<T>(_ item: T?) {
         guard let item = item as? dataF else { return }
         self.item = item
         self.lblTitle.text = item.name
-        self.lblPrice.text = item.price
+        self.lblPrice.text = "\(item.price ?? "") VND"
         if let image = item.image {
             img.kf.indicatorType = .activity
             self.img.kf.setImage(with: URL(string: image))

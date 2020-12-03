@@ -25,48 +25,51 @@ class RestaurantDetailVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        getData()
     }
     
     //MARK: functions
     
     func initUI() {
+        getData()
         if let name = data?.name {
             self.lblTitle.text = name
         }
         if let isLoved = data?.liked {
             self.imgLove.image = isLoved ? #imageLiteral(resourceName: "liked") : #imageLiteral(resourceName: "like")
+            self.isLoved = isLoved
         }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: FoodItemsTableViewCell, bundle: nil), forCellReuseIdentifier: FoodItemsTableViewCell)
         tableView.layer.cornerRadius = 10
         self.ImgHeaderBackground.kf.setImage(with: URL(string: (data?.image)!))
+        let fView = UIView()
+        tableView.tableFooterView = fView
     }
     
     func getData() {
-        if let url = URL(string: "\(Constants.baseURL)restaurantFood") {
+        if let url = URL(string: "\(Constants.baseURL)retaurantFood") {
             let id = data?.id
-                AF.request("\(url)?id=\(id ?? 3)", method: .post).responseString { (response) in
-                    switch response.result {
-                    case .success(let responseString):
-                        guard let resResponse = FoodModel(JSONString: responseString) else {return}
-                        if let status = resResponse.status {
-                            if status == 200 {
-                                if let fooddata = resResponse.dataF {
-                                    self.foodData = fooddata
-                                    self.tableView.reloadData()
-                                }
-                            } else {
-                                self.CreateAlert(title: "Notification", message: "This information have some problems")
+            AF.request("\(url)?id=\(id ?? 3)", method: .post).responseString { (response) in
+                switch response.result {
+                case .success(let responseString):
+                    guard let resResponse = FoodModel(JSONString: responseString) else {return}
+                    if let status = resResponse.status {
+                        if status == 200 {
+                            if let fooddata = resResponse.dataF {
+                                self.foodData = fooddata
+                                self.tableView.reloadData()
                             }
+                        } else {
+                            self.CreateAlert(title: "Notification", message: "This information have some problems")
                         }
-                    case .failure(let err):
-                        print(err.localizedDescription)
-                        self.CreateAlert(title: "Notification", message: "Your connection have some problems")
                     }
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    self.CreateAlert(title: "Notification", message: "Your connection have some problems")
                 }
             }
+        }
     }
     
     //MARK: actions

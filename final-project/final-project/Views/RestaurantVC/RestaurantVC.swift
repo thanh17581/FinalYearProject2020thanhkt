@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RestaurantVC: BaseVC {
 
@@ -27,6 +28,8 @@ class RestaurantVC: BaseVC {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: RestaurantTableViewCell, bundle: nil), forCellReuseIdentifier: RestaurantTableViewCell)
+        let fView = UIView()
+        tableView.tableFooterView = fView
     }
     
     func getData() {
@@ -82,11 +85,39 @@ extension RestaurantVC: LoveRestaurantDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let vc = RestaurantDetailVC()
-        vc.data = Restaurants?[indexPath.row]
+        vc.data = self.Restaurants?[indexPath.row]
         vc.modalPresentationStyle = .fullScreen
         vc.modalTransitionStyle = .coverVertical
         self.navigationController?.pushViewController(vc, animated: true)
+        
+//        self.view.makeToastActivity(.center)
+//        if let url = URL(string: "\(Constants.baseURL)retaurantFood") {
+//            let idR = Restaurants?[indexPath.row].id
+//                AF.request("\(url)?id=\(idR ?? 0)", method: .post).responseString { (response) in
+//                    switch response.result {
+//                    case .success(let responseString):
+//                        guard let FResponse = FoodModel(JSONString: responseString) else {return}
+//                        if let statusLogin = FResponse.status {
+//                            if statusLogin == 200 {
+//                                self.view.hideToastActivity()
+//                                let vc = RestaurantDetailVC()
+//                                vc.data = self.Restaurants?[indexPath.row]
+//                                vc.foodData = FResponse.dataF
+//                                vc.modalPresentationStyle = .fullScreen
+//                                vc.modalTransitionStyle = .coverVertical
+//                                self.navigationController?.pushViewController(vc, animated: true)
+//                            } else {
+//                                self.CreateAlert(title: "Notification", message: "Your account is not available")
+//                            }
+//                        }
+//                    case .failure(let err):
+//                        print(err.localizedDescription)
+//                        self.CreateAlert(title: "Notification", message: "Your connection have some problems")
+//                    }
+//                }
+//            }
     }
 }
 

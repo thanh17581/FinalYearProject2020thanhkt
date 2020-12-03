@@ -36,10 +36,16 @@ class CartVC: BaseVC {
 //        }
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "updateBill"), object: nil)
         lblTotalCartPrice.text = "\(bill)"
+        cart.forEach { (F) in
+            bill = bill + (Int(F.price ?? "0") ?? 0)
+        }
         BtnCheckout.layer.cornerRadius = BtnCheckout.frame.size.height / 2
+        let fView = UIView()
+        tableView.tableFooterView = fView
+        
     }
     @IBAction func OnBtnCheckoutTapped(_ sender: Any) {
-        let items = CartManager.shared.items
+//        let items = CartManager.shared.items
         self.view.makeToastActivity(.center)
 
     }
@@ -50,12 +56,34 @@ class CartVC: BaseVC {
 
 extension CartVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataFood.count
+        return cart.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartTableViewCell, for: indexPath) as! CartTableViewCell
-        cell.configureCartTableViewCellWith(item: dataFood[indexPath.row])        
+        cell.configureCartTableViewCellWith(item: cart[indexPath.row])
         return cell
     }
+    
+    private func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            cart.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {  }
+    }
+    
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        if ed
+//    }
+//
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            cart.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {  }
+//    }
 }

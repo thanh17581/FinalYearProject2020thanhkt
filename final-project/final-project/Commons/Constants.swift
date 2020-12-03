@@ -45,16 +45,3 @@ enum homevc {
     case none
 }
 
-class UserInfor {
-    static let shared = UserInfor()
-    var profile : UserDetail?
-}
-
-class FoodInfo {
-    static let shared = FoodInfo()
-    var res1 = [dataF]()
-    var res2 = [dataF]()
-    var res3 = [dataF]()
-    var res4 = [dataF]()
-    var res5 = [dataF]()
-}

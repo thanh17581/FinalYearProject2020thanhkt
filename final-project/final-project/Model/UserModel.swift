@@ -33,6 +33,7 @@ class UserDetail: Mappable {
     var name: String?
     var age: String?
     var email: String?
+    var wallet: Int?
     init() {}
     required init?(map: Map) {  }
     
@@ -43,6 +44,7 @@ class UserDetail: Mappable {
         name <- map["name"]
         age <- map["age"]
         email <- map["email"]
+        wallet <- map["wallet"]
     }
     
     

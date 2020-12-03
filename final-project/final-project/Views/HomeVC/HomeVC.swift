@@ -42,7 +42,6 @@ class HomeVC: BaseVC {
                     guard let loginResponse = AccountModel(JSONString: responseString) else {return}
                     if let statusLogin = loginResponse.status {
                         if statusLogin == 200 {
-                            UserInfor.shared.profile = loginResponse.data
                             profile = UserDetail()
                             if let id = loginResponse.data?.id {
                                 profile?.id = id

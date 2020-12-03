@@ -108,4 +108,10 @@ extension homedishesVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width / 2.1, height: UIScreen.main.bounds.width / 2.1)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        cart.append(arrDisplay[indexPath.item])
+    }
+    
+    
 }

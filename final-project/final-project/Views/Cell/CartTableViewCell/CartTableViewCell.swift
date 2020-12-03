@@ -47,7 +47,7 @@ class CartTableViewCell: UITableViewCell {
         itemPrice.text = "\(item.price ?? "") per one"
 //        customAmountView.count = item.quantity
         itemTotal.text = item.price ?? ""
-        bill = bill + Int(itemTotal.text ?? "")!
+//        bill = bill + Int(itemTotal.text ?? "")!
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBill"), object: nil)
     }
 

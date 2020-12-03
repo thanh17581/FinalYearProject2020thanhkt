@@ -44,6 +44,9 @@ class LoveRestaurantVC: BaseVC {
                 self?.tableView.cr.endHeaderRefresh()
             })
         }
+        let fView = UIView()
+
+        tableView.tableFooterView = fView
     }
     
     @IBAction func backAct(_ sender: Any) {
@@ -63,6 +66,17 @@ extension LoveRestaurantVC: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         cell.bgColor(.clear)
         return cell
+    }
+    
+    private func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            arrLovedRestaurant.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {  }
     }
 }
 
