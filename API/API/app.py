@@ -17,6 +17,7 @@ resFood4 = [dict]
 resFood5 = [dict]
 resFood6 = [dict]
 wallet = 0
+adminW = 0
 
 try:
     connection = mysql.connector.connect(host='localhost',
@@ -232,6 +233,24 @@ finally:
         connection.close()
         cursor.close()
 
+try:
+    connection = mysql.connector.connect(host='localhost',
+                                            database='account',
+                                            user='root',
+                                            password='')
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM account INNER JOIN account_bank_detail on account.idA = account_bank_detail.idA WHERE account.idA = 2")
+    records = cursor.fetchall()
+    for row in records:
+        adminW = row[8]   
+except Error as e:
+    print("Error reading data from MySQL table", e)
+finally:
+    if (connection.is_connected()):
+        connection.close()
+        cursor.close()
+
+
 @app.route("/restaurant")
 def restaurant_api():
     dataR_r = dataR[1:]
@@ -350,6 +369,56 @@ def get_res_food_api():
 
     else:
         return jsonify(message="fail",status=500)
+
+@app.route("/payment", methods=["POST"])
+def payment_api():
+    if request.args.get("cost"):
+        cost = int(request.args.get("cost"))
+        try:
+            connection = mysql.connector.connect(host='localhost',
+                                                    database='account',
+                                                    user='root',
+                                                    password='')
+
+            cursor = connection.cursor()
+            cursor.execute("SELECT * FROM account_bank_detail WHERE account_bank_detail.idA=1")
+            records = cursor.fetchall()
+            
+            for row in records:
+                wallet = int(row[2])
+
+            wallet = wallet - cost
+
+            cursor = connection.cursor()
+            cursor.execute("SELECT * FROM account_bank_detail WHERE account_bank_detail.idA=2")
+            records = cursor.fetchall()
+            
+            for row in records:
+                adminW = int(row[2])
+
+            adminW = adminW + cost
+
+            cursor = connection.cursor()
+            cursor.execute("UPDATE account_bank_detail SET account_bank_detail.wallet = %r WHERE account_bank_detail.idA = 1" %wallet)
+            connection.commit()
+
+            cursor = connection.cursor()
+            cursor.execute("UPDATE account_bank_detail SET account_bank_detail.wallet = %r WHERE account_bank_detail.idA = 2" %adminW)
+            connection.commit()
+            return jsonify(message="success",status=200)
+
+        except Error as e:
+            print("Error reading data from MySQL table", e)
+            return jsonify(message="fail",status=500)
+        finally:
+            if (connection.is_connected()):
+                # return jsonify(message="success",status=200)
+                connection.close()
+                cursor.close()
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=1)

@@ -55,34 +55,6 @@ extension RestaurantVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Restaurants?.count ?? 0
     }
-
-}
-
-extension RestaurantVC: LoveRestaurantDelegate {
-    
-    func loveRestaurant(rest: dataR) {
-        if let row = Restaurants?.firstIndex(where: { (restaurant) -> Bool in
-            restaurant.id == rest.id
-            }) {
-            self.Restaurants?[row].liked = true
-            let indexPath = IndexPath(row: row, section: 1)
-            tableView.reloadRows(at: [indexPath], with: .fade)
-        } else {
-            print("error love restaurant")
-        }
-    }
-    
-    func disLoveRestaurant(rest: dataR) {
-        if let row = Restaurants?.firstIndex(where: { (restaurant) -> Bool in
-            restaurant.id == rest.id
-        }) {
-            self.Restaurants?[row].liked = false
-            let indexPath = IndexPath(row: row, section: 1)
-            tableView.reloadRows(at: [indexPath], with: .fade)
-        } else {
-            print("error dislove restaurant")
-        }
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -118,6 +90,34 @@ extension RestaurantVC: LoveRestaurantDelegate {
 //                    }
 //                }
 //            }
+    }
+
+}
+
+extension RestaurantVC: LoveRestaurantDelegate {
+    
+    func loveRestaurant(rest: dataR) {
+        if let row = Restaurants?.firstIndex(where: { (restaurant) -> Bool in
+            restaurant.id == rest.id
+            }) {
+            self.Restaurants?[row].liked = true
+            let indexPath = IndexPath(row: row, section: 1)
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        } else {
+            print("error love restaurant")
+        }
+    }
+    
+    func disLoveRestaurant(rest: dataR) {
+        if let row = Restaurants?.firstIndex(where: { (restaurant) -> Bool in
+            restaurant.id == rest.id
+        }) {
+            self.Restaurants?[row].liked = false
+            let indexPath = IndexPath(row: row, section: 1)
+            tableView.reloadRows(at: [indexPath], with: .fade)
+        } else {
+            print("error dislove restaurant")
+        }
     }
 }
 

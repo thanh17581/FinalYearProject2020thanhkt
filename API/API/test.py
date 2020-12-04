@@ -63,28 +63,41 @@ from mysql.connector import Error
 #         connection.close()
 #         cursor.close()
 
-idR = 2
+wR = 0
+w = 0
 
 try:
     connection = mysql.connector.connect(host='localhost',
-                                            database='restaurant',
+                                            database='account',
                                             user='root',
                                             password='')
 
     cursor = connection.cursor()
-    cursor.execute("SELECT * FROM restaurant_food_detail INNER JOIN food ON food.idF = restaurant_food_detail.idF WHERE restaurant_food_detail.idR=%d" %idR)
+    cursor.execute("SELECT * FROM account_bank_detail WHERE account_bank_detail.idA=1")
     records = cursor.fetchall()
-    resFood = []
+    
     for row in records:
-        print(row[0])
-        print(row[1])
-        print(row[2])
-        print(row[3])
-        print(row[4])
-        print(row[5])
-        print(row[6])
-        print(row[7])
-        print(row[8])
+        wR = int(row[2])
+
+    wR = wR - 500
+
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM account_bank_detail WHERE account_bank_detail.idA=2")
+    records = cursor.fetchall()
+    
+    for row in records:
+        w = int(row[2])
+
+    w = w + 500
+
+    cursor = connection.cursor()
+    cursor.execute("UPDATE account_bank_detail SET account_bank_detail.wallet = %r WHERE account_bank_detail.idA = 1" %wR)
+    connection.commit()
+
+    cursor = connection.cursor()
+    cursor.execute("UPDATE account_bank_detail SET account_bank_detail.wallet = %r WHERE account_bank_detail.idA = 2" %w)
+    connection.commit()
+
 except Error as e:
     print("Error reading data from MySQL table", e)
 finally:

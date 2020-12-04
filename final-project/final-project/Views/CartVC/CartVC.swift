@@ -8,6 +8,7 @@
 
 import UIKit
 import Toast_Swift
+import Alamofire
 
 class CartVC: BaseVC {
 
@@ -45,8 +46,31 @@ class CartVC: BaseVC {
         
     }
     @IBAction func OnBtnCheckoutTapped(_ sender: Any) {
-//        let items = CartManager.shared.items
         self.view.makeToastActivity(.center)
+        print("a")
+        
+        if let url = URL(string: "\(Constants.baseURL)payment") {
+            AF.request("\(url)?cost=\(bill)", method: .post).responseString { (response) in
+                switch response.result {
+                case .success(let responseString):
+                    guard let loginResponse = loginModel(JSONString: responseString) else {return}
+                    if let statusLogin = loginResponse.status {
+                        if statusLogin == 200 {
+                            let vc = HomeVC()
+                            vc.modalPresentationStyle = .fullScreen
+                            vc.modalTransitionStyle = .crossDissolve
+                            self.view.hideToastActivity()
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        } else {
+                            self.CreateAlert(title: "Notification", message: "Please check your connection!")
+                        }
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+                    self.CreateAlert(title: "Notification", message: "Your connection have some problems")
+                }
+            }
+        }
 
     }
     @IBAction func backAct(_ sender: Any) {
@@ -75,15 +99,4 @@ extension CartVC: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {  }
     }
-    
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//        if ed
-//    }
-//
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            cart.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {  }
-//    }
 }

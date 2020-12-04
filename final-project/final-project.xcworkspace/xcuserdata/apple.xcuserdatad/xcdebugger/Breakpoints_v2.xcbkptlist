@@ -7,65 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A9F8F1A6-0A3D-4AF9-A33A-5E7E87490B60"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "final-project/Views/Cell/CartTableViewCell/CartTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "configureCartTableViewCellWith(item:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0F968510-5EF2-43CA-B53A-BD9676DEE06D"
+            uuid = "ED5CF113-31A5-466A-B692-E358F76E92A4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "final-project/Views/CartVC/CartVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "initUI()"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "OnBtnCheckoutTapped(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0F968510-5EF2-43CA-B53A-BD9676DEE06D - 8d4e7e274f96f1fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "final_project.CartVC.initUI() -&gt; ()"
-                  moduleName = "final-project"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/FinalYearProject2020thanhkt/final-project/final-project/Views/CartVC/CartVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "2458">
-               </Location>
-               <Location
-                  uuid = "0F968510-5EF2-43CA-B53A-BD9676DEE06D - c7068636409dc87c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (final_project.dataF) -&gt; () in final_project.CartVC.initUI() -&gt; ()"
-                  moduleName = "final-project"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Desktop/FinalYearProject2020thanhkt/final-project/final-project/Views/CartVC/CartVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "50">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

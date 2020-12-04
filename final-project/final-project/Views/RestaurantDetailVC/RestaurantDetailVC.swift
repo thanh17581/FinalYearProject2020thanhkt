@@ -124,5 +124,14 @@ extension RestaurantDetailVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.view.makeToastActivity(.center)
+//        cart.append(foodData![indexPath.item])
+        if let foodData = foodData?[indexPath.item] {
+            cart.append(foodData)
+            self.view.hideToastActivity()
+        }
+    }
+    
     
 }
